@@ -1,0 +1,116 @@
+{
+  "uuid": "e7613f1c-a307-4261-8ec9-9c5dc47b8cd8",
+  "lastMigration": 25,
+  "name": "Test-Sample-1",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3008,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "17ee9546-5d40-4e89-99e6-9a44503a8eac",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "ListBuckets",
+      "responses": [
+        {
+          "uuid": "4c3c25ce-8708-490a-9821-dc2f93a1653c",
+          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListAllMyBucketsResult>\n   <Buckets>\n{{# repeat (faker 'datatype.number' 20) }}\n      <Bucket>\n         <CreationDate>{{faker 'datatype.datetime'}}</CreationDate>\n         <Name>Fixed-Bucket-Name-{{faker 'datatype.string'}}</Name>\n      </Bucket>\n{{/ repeat }}\n   </Buckets>\n   <Owner>\n      <DisplayName>{{faker 'datatype.string'}}</DisplayName>\n      <ID>{{faker 'datatype.uuid'}}</ID>\n   </Owner>\n</ListAllMyBucketsResult>",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "vzpi",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9ff04be6-6cf8-4c12-94f7-51516d6c95ac",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "ListBucketInventoryConfigurations",
+      "responses": [
+        {
+          "uuid": "9acc58c3-54de-4a71-90e7-8c2d6aa05f88",
+          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListInventoryConfigurationsResult>\n   <ContinuationToken>{{faker 'datatype.string'}}</ContinuationToken>\n   <InventoryConfiguration>\n{{# repeat (faker 'datatype.number' 20) }}\n      <Destination>\n         <S3BucketDestination>\n            <AccountId>{{faker 'datatype.string'}}</AccountId>\n            <Bucket>{{faker 'datatype.string'}}</Bucket>\n            <Encryption>\n               <SSE-KMS>\n                  <KeyId>{{faker 'datatype.string'}}</KeyId>\n               </SSE-KMS>\n               <SSE-S3>\n               </SSE-S3>\n            </Encryption>\n            <Format>{{faker 'datatype.string'}}</Format>\n            <Prefix>{{faker 'datatype.string'}}</Prefix>\n         </S3BucketDestination>\n      </Destination>\n      <Filter>\n         <Prefix>{{faker 'datatype.string'}}</Prefix>\n      </Filter>\n      <Id>{{faker 'datatype.string'}}</Id>\n      <IncludedObjectVersions>{{faker 'datatype.string'}}</IncludedObjectVersions>\n      <IsEnabled>{{faker 'date.past'}}</IsEnabled>\n      <OptionalFields>\n         <Field>{{faker 'datatype.string'}}</Field>\n      </OptionalFields>\n      <Schedule>\n         <Frequency>{{faker 'datatype.string'}}</Frequency>\n      </Schedule>\n{{/ repeat }}\n   </InventoryConfiguration>\n   <IsTruncated>{{faker 'date.past'}}</IsTruncated>\n   <NextContinuationToken>{{faker 'datatype.string'}}</NextContinuationToken>\n</ListInventoryConfigurationsResult>",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "vzpi",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "",
+              "value": "",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": true,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "17ee9546-5d40-4e89-99e6-9a44503a8eac"
+    },
+    {
+      "type": "route",
+      "uuid": "9ff04be6-6cf8-4c12-94f7-51516d6c95ac"
+    }
+  ]
+}

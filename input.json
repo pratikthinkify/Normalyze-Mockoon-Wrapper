@@ -1,0 +1,16 @@
+{
+  "AWS": [
+    {
+      "name": "ListBuckets",
+      "category": "AmazonS3",
+      "type": "get"
+    },
+    {
+      "name": "ListBucketInventoryConfigurations",
+      "category": "AmazonS3",
+      "type": "get"
+    }
+  ],
+  "Azure": [],
+  "GCP": []
+}

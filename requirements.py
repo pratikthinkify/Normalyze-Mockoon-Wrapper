@@ -1,0 +1,11 @@
+beautifulsoup4==4.11.2
+bs4==0.0.1
+certifi==2022.12.7
+charset-normalizer==3.0.1
+idna==3.4
+oauthlib==3.2.2
+requests==2.28.2
+requests-oauthlib==1.3.1
+soupsieve==2.3.2.post1
+tweepy==4.12.1
+urllib3==1.26.14

@@ -1,0 +1,27 @@
+{
+  "uuid": "",
+  "documentation": "",
+  "method": "get",
+  "endpoint": "",
+  "responses": [
+    {
+      "uuid": "",
+      "body": "",
+      "latency": 0,
+      "statusCode": 200,
+      "label": "",
+      "headers": [],
+      "bodyType": "INLINE",
+      "filePath": "",
+      "databucketID": "vzpi",
+      "sendFileAsBody": false,
+      "rules": [],
+      "rulesOperator": "OR",
+      "disableTemplating": false,
+      "fallbackTo404": false,
+      "default": true
+    }
+  ],
+  "enabled": true,
+  "responseMode": null
+}
